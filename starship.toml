@@ -1,0 +1,103 @@
+# starship.toml
+
+#######################################
+# prompt global settings
+########################################
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$kubernetes\
+$fill\
+$cmd_duration $time\
+$memory_usage\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](purple)"
+
+[username]
+disabled = true
+show_always = true
+style_user = "white bold"
+style_root = "white bold"
+# format = "user: [$user]($style) "
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "105"
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "155"
+truncation_length = 4
+truncation_symbol = "..."
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "215"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bold yellow"
+
+[git_metrics]
+format = "([+$added]($added_style) )([-$deleted]($deleted_style) )"
+disabled = false
+
+[kubernetes]
+format = 'on [ﴱ $context\($namespace\)]($style) '
+disabled = false
+style = "126"
+
+[helm]
+format = "via [ $version](bold purple) "
+disabled = true
+
+[terraform]
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+disabled = true
+
+[vagrant]
+format = "via [ vagrant $version]($style) "
+disabled = true
+
+[docker_context]
+format = "via [ $context](bold blue) "
+disabled = true
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[time]
+disabled = false
+style = "251"
+format = "at [$time]($style) "
+
+[memory_usage]
+format = "[$symbol${ram}]($style)"
+disabled = false
+threshold = -1
+style = "117"
+symbol = " "
