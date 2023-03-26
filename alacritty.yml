@@ -10,18 +10,11 @@ window:
   dimensions:
     columns: 122
     lines: 42
-
-  opacity: 0.95
-
+  opacity: 1
   padding:
     x: 10
-    y: 10
+    y: 8
   dynamic_padding: false
-
-  class:
-    instance: Alacritty
-    general: Alacritty
-
   decorations: buttonless
 
 font:
@@ -33,7 +26,7 @@ font:
   use_thin_stokes: true
 
 import:
- - ~/.config/alacritty/themes/themes/ayu_dark.yaml
+ - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
 
 key_bindings:
   - { key: N, mods: Command|Shift, action: SpawnNewInstance }
