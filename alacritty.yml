@@ -1,5 +1,3 @@
-# alacritty.yml
-
 live_config_reload: true
 
 scrolling:
@@ -8,25 +6,29 @@ scrolling:
 
 window:
   dimensions:
-    columns: 122
-    lines: 42
-  opacity: 1
+    columns: 141
+    lines: 45
+  opacity: 0.95
   padding:
-    x: 10
-    y: 8
+    x: 8
+    y: 0
   dynamic_padding: false
   decorations: buttonless
 
 font:
   normal:
-    # family: "SFMono Nerd Font"
+    # family: "FiraCode Nerd Font Mono"
     family: "MesloLGS NF"
     style: Regular
   size: 15.0
   use_thin_stokes: true
 
 import:
- - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
+ # - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
+  - ~/.config/alacritty/themes/themes/nord.yaml
+
+selection:
+  save_to_clipboard: true
 
 key_bindings:
   - { key: N, mods: Command|Shift, action: SpawnNewInstance }
